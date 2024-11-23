@@ -1,13 +1,13 @@
 {% set name = "arabica" %}
-{% set version = "1.7.7" %}
+{% set version = "1.8.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/arabica-{{ version }}.tar.gz
-  sha256: cfa5d870669e9c45796e57652119fdf14904adb614e6ec5c8e31a8743d89a894
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/arabica-{{ version }}.tar.gz
+  sha256: 6edeb494da3c4cae0440fb8e3c0192e2acc454d046e45876e824126a42f4395d
 
 build:
   noarch: python
