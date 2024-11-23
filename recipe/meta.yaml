@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/arabica-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/arabica-{{ version }}.tar.gz
   sha256: cd2c62aa907f6a91aa65bfb850c6a5e94cea6dfb881820c0a0ea29799dfb4e5c
 
 build:
@@ -16,10 +16,10 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<3.11
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8,<3.11
+    - python >={{ python_min }}
     - pandas ==1.4.0
     - nltk ==3.6.2
     - regex ==2022.10.31
@@ -41,7 +41,8 @@ test:
   # Removing pip check due to wordcloud failing to report proper version
   # commands:
   #   - pip check
-  # requires:
+  requires:
+    - python {{ python_min }}
   #   - pip
 
 about:
